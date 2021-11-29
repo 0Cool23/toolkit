@@ -1,0 +1,8 @@
+[submodule "targets"]
+	path = targets
+	url = git@github.com:0Cool23/targets.git
+
+[submodule "doxygen"]
+	path = dox/doxygen
+	url = git@github.com:0Cool23/doxygen.git
+
