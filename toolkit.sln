@@ -3,9 +3,83 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegressionTests", "RegressionTests\RegressionTests.csproj", "{373280A0-35C8-42B5-A282-77229203CC06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E68508B6-6E2E-4BC1-9B3E-8915978A17F9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dox", "dox", "{01FFF5FB-40EE-4767-9A35-C6F2F8A833F9}"
+	ProjectSection(SolutionItems) = preProject
+		dox\license.dox = dox\license.dox
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doxygen", "doxygen", "{1D07E7BA-8CD5-4043-94AC-5E34CF59A79B}"
+	ProjectSection(SolutionItems) = preProject
+		dox\doxygen\.gitignore = dox\doxygen\.gitignore
+		dox\doxygen\coding_style.dox = dox\doxygen\coding_style.dox
+		dox\doxygen\groups.dox = dox\doxygen\groups.dox
+		dox\doxygen\index.dox = dox\doxygen\index.dox
+		dox\doxygen\license.dox = dox\doxygen\license.dox
+		dox\doxygen\README.md = dox\doxygen\README.md
+		dox\doxygen\releases.dox = dox\doxygen\releases.dox
+		dox\doxygen\versioning.dox = dox\doxygen\versioning.dox
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "targets", "targets", "{5D93AC71-394D-4FDE-8576-1EAF7F01A908}"
+	ProjectSection(SolutionItems) = preProject
+		targets\BuildInfo.targets = targets\BuildInfo.targets
+		targets\Coverage.targets = targets\Coverage.targets
+		targets\LicenseInfo.targets = targets\LicenseInfo.targets
+		targets\README.md = targets\README.md
+		targets\SolutionInfo.targets = targets\SolutionInfo.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75184A68-E2EF-4C2C-BEE9-A98F785DC717}"
+	ProjectSection(SolutionItems) = preProject
+		targets\src\BuildInfoTask.cs = targets\src\BuildInfoTask.cs
+		targets\src\CoverageTask.cs = targets\src\CoverageTask.cs
+		targets\src\LicenseInfoTask.cs = targets\src\LicenseInfoTask.cs
+		targets\src\SolutionInfoTask.cs = targets\src\SolutionInfoTask.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "coding_styles", "coding_styles", "{C1B14649-BD4C-4C2C-AF94-876E14F0A078}"
+	ProjectSection(SolutionItems) = preProject
+		dox\doxygen\coding_styles\csg_csharp.dox = dox\doxygen\coding_styles\csg_csharp.dox
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "licenses", "licenses", "{C3592AEF-7CC2-4E39-A2B8-A6E3439B4BC4}"
+	ProjectSection(SolutionItems) = preProject
+		dox\doxygen\licenses\license-apache2.0.md = dox\doxygen\licenses\license-apache2.0.md
+		dox\doxygen\licenses\license-gpl2.0.md = dox\doxygen\licenses\license-gpl2.0.md
+		dox\doxygen\licenses\license-lgpl2.1.md = dox\doxygen\licenses\license-lgpl2.1.md
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Coverage|Any CPU = Coverage|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{373280A0-35C8-42B5-A282-77229203CC06}.Coverage|Any CPU.ActiveCfg = Coverage|Any CPU
+		{373280A0-35C8-42B5-A282-77229203CC06}.Coverage|Any CPU.Build.0 = Coverage|Any CPU
+		{373280A0-35C8-42B5-A282-77229203CC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373280A0-35C8-42B5-A282-77229203CC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373280A0-35C8-42B5-A282-77229203CC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373280A0-35C8-42B5-A282-77229203CC06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D07E7BA-8CD5-4043-94AC-5E34CF59A79B} = {01FFF5FB-40EE-4767-9A35-C6F2F8A833F9}
+		{75184A68-E2EF-4C2C-BEE9-A98F785DC717} = {5D93AC71-394D-4FDE-8576-1EAF7F01A908}
+		{C1B14649-BD4C-4C2C-AF94-876E14F0A078} = {1D07E7BA-8CD5-4043-94AC-5E34CF59A79B}
+		{C3592AEF-7CC2-4E39-A2B8-A6E3439B4BC4} = {1D07E7BA-8CD5-4043-94AC-5E34CF59A79B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C344218A-B83C-4B8D-8E6D-AD2D3EE88803}
