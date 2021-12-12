@@ -49,7 +49,7 @@ public class AsmBuildInfo
         {
         var basic_field_map = init_field_name_map(field_info_list, the_basic_field_name_list);
         /*
-        ProjectName:    PandorasBox
+        ProjectName:    xxxxxxxx
             AsmVersion: v0.0.0.156 (2021-02-06T11:02:11+01:00)
             ApiVersion: v0.0.0.0
         */

@@ -28,7 +28,7 @@ namespace RegressionTests.libApplication.toolkit
 //[Ignore]
 public class PipeIO_test
     {
-    private const string REGRESSION_TEST_PIPE_NAME = "RegressionTests.PandorasBox.Styx";
+    private const string REGRESSION_TEST_PIPE_NAME = "RegressionTests.Project.Styx";
 
     private static NamedPipeServerStream create_named_pipe_server_stream()
         {
