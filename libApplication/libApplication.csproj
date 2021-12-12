@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="$(SolutionDir)/targets/BuildInfo.targets" />
+    <Import Project="$(SolutionDir)/targets/LicenseInfo.targets" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Configurations>Debug;Release;Coverage;Setup</Configurations>
+        <Authors>Goetz Olbrischewski</Authors>
+        <Company />
+        <Description>development toolkit library</Description>
+        <Copyright>LGPL v2.1</Copyright>
+        <PackageLicenseFile>license-lgpl2.1.md</PackageLicenseFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Diagnostics.EventLog" Version="5.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Properties\language.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>language.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Properties\language.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>language.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="license-lgpl2.1.md">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+
+</Project>

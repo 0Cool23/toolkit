@@ -7,7 +7,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
+	<LangVersion>latest</LangVersion>
     <IsPackable>false</IsPackable>
 
     <Configurations>Debug;Release;Coverage</Configurations>
@@ -22,6 +22,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\libApplication\libApplication.csproj" />
   </ItemGroup>
 
 </Project>
