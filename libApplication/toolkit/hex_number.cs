@@ -38,7 +38,7 @@ public static class HexNumber
         {
         if( string.IsNullOrEmpty(number_str) )
             {
-            throw new ArgumentNullException();
+            throw new ArgumentNullException(Properties.language.NUMBER_PARSE_NULL);
             }
 
         number_str = number_str.Trim().ToLower();

@@ -49,7 +49,7 @@ public abstract class AsmInfo
         m_build_type_name = build_type_name;
         }
 
-    private string get_field_value_safe( FieldInfo[] field_info_list, string field_name )
+    private static string get_field_value_safe( FieldInfo[] field_info_list, string field_name )
         {
         foreach( var field_info in field_info_list )
             {
@@ -70,7 +70,7 @@ public abstract class AsmInfo
 
         @return
     */
-    protected string get_field_value( FieldInfo[] field_info_list, string field_name )
+    protected static string get_field_value( FieldInfo[] field_info_list, string field_name )
         {
         if( field_info_list == null )
             {
@@ -83,7 +83,7 @@ public abstract class AsmInfo
         return get_field_value_safe(field_info_list, field_name);
         }
 
-    private Dictionary<string, string> init_field_name_map_safe( FieldInfo[] field_info_list, List<string> field_name_list )
+    private static Dictionary<string, string> init_field_name_map_safe( FieldInfo[] field_info_list, List<string> field_name_list )
         {
         var field_name_map = new Dictionary<string, string>();
         foreach( var field_name in field_name_list )
@@ -108,7 +108,7 @@ public abstract class AsmInfo
 
         @return
      */
-    protected Dictionary<string, string> init_field_name_map( FieldInfo[] field_info_list, List<string> field_name_list )
+    protected static Dictionary<string, string> init_field_name_map( FieldInfo[] field_info_list, List<string> field_name_list )
         {
         if( field_info_list == null )
             {

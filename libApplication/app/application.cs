@@ -74,10 +74,10 @@ public class Application
     private List<ArgEntry> m_arg_table = null;
 
     #region default arguments
-        private readonly ArgEntry m_arg_help      = new ArgEntry('h',  "help",        ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_HELP_INFO);
-        private readonly ArgEntry m_arg_license   = new ArgEntry('l',  "license",     ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_LICENSE_INFO);
-        private readonly ArgEntry m_arg_verbose   = new ArgEntry('v',  "verbose",     ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_VERBOSITY_INFO);
-        private readonly ArgEntry m_arg_build_info = new ArgEntry('\0', "build-info", ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_BUILD_INFO);
+        private readonly ArgEntry m_arg_help       = new('h',  "help",        ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_HELP_INFO);
+        private readonly ArgEntry m_arg_license    = new('l',  "license",     ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_LICENSE_INFO);
+        private readonly ArgEntry m_arg_verbose    = new('v',  "verbose",     ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_VERBOSITY_INFO);
+        private readonly ArgEntry m_arg_build_info = new('\0', "build-info", ArgType.NO_ARGUMENT, false, new Argument(), null, Properties.language.HELP_BUILD_INFO);
     #endregion
 
     /** @details   This method attaches an @ref REF_iLogger interface and set the
@@ -156,7 +156,7 @@ public class Application
         attach(app_config.logger);
         }
 
-    private bool arg_short_names_match( char table_arg_name, char entry_arg_name )
+    private static bool arg_short_names_match( char table_arg_name, char entry_arg_name )
         {
         if( table_arg_name == '\0' )
             {
@@ -165,7 +165,7 @@ public class Application
         return (table_arg_name == entry_arg_name);
         }
 
-    private bool arg_long_names_match( string table_arg_name, string entry_arg_name )
+    private static bool arg_long_names_match( string table_arg_name, string entry_arg_name )
         {
         if( table_arg_name == string.Empty )
             {
@@ -229,7 +229,7 @@ public class Application
         Logger.info(0, application_info());
         }
 
-    private string get_option_entry( ArgEntry arg_entry )
+    private static string get_option_entry( ArgEntry arg_entry )
         {
         string option_str;
 
@@ -354,7 +354,7 @@ public class Application
 
     private void parse_args( string[] args, List<ArgEntry> arg_table )
         {
-        ArgParser arg_parser = new ArgParser();
+        ArgParser arg_parser = new();
 
         init_arg_table(arg_table);
         arg_parser.process(args, m_arg_table);
@@ -409,7 +409,7 @@ public class Application
         {
         Environment.ExitCode = 0;
         
-        Application application = new Application();
+        Application application = new();
         return application.run(args, arg_table, app_config);
         }
     }

@@ -205,7 +205,7 @@ internal class ArgShort
         return (argument.StartsWith("-") && argument.Length > 1);
         }
 
-    private string get_successor_argument( bool is_required, ArgVector argv )
+    private static string get_successor_argument( bool is_required, ArgVector argv )
         {
         string argument = null;
         if( argv.has_successor )
@@ -221,7 +221,7 @@ internal class ArgShort
         return argument;
         }
 
-    private string get_current_argument( ArgVector argv )
+    private static string get_current_argument( ArgVector argv )
         {
         ++argv.str_pos;
         var argument = argv.current_arg.Substring(argv.str_pos);
@@ -229,7 +229,7 @@ internal class ArgShort
         return argument;
         }
 
-    private string get_required_argument( ArgVector argv )
+    private static string get_required_argument( ArgVector argv )
         {
         var argument = argv.current_arg.Substring(argv.str_pos);
         argv.str_pos = argv.current_arg.Length;

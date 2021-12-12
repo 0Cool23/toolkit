@@ -12,6 +12,26 @@
         <Description>development toolkit library</Description>
         <Copyright>LGPL v2.1</Copyright>
         <PackageLicenseFile>license-lgpl2.1.md</PackageLicenseFile>
+        <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>True</EnableNETAnalyzers>
+        <AnalysisLevel>6.0</AnalysisLevel>
+        <NeutralLanguage>en-US</NeutralLanguage>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <WarningLevel>5</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <WarningLevel>5</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Coverage|AnyCPU'">
+      <WarningLevel>5</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Setup|AnyCPU'">
+      <WarningLevel>5</WarningLevel>
     </PropertyGroup>
 
     <ItemGroup>

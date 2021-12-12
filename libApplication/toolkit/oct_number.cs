@@ -38,7 +38,7 @@ public static class OctNumber
         {
         if( string.IsNullOrEmpty(number_str) )
             {
-            throw new ArgumentNullException();
+            throw new ArgumentNullException(Properties.language.NUMBER_PARSE_NULL);
             }
 
         check_octal_literal(number_str);

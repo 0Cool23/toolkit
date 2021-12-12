@@ -37,7 +37,7 @@ public class AsmBuildInfo
         {
         }
 
-    private static readonly List<string> the_basic_field_name_list = new List<string>
+    private static readonly List<string> the_basic_field_name_list = new()
         {
             "ProjectName",
             "AsmVersion",
@@ -64,7 +64,7 @@ public class AsmBuildInfo
         m_logger.info(0, log_message);
         }
 
-    private static readonly List<string> the_extended_field_name_list = new List<string>
+    private static readonly List<string> the_extended_field_name_list = new()
         {
             "BuildHost",
             "BuildType",
@@ -75,24 +75,24 @@ public class AsmBuildInfo
             "InSync",
         };
 
-    private static readonly Dictionary<bool, string> the_git_status = new Dictionary<bool, string>
+    private static readonly Dictionary<bool, string> the_git_status = new()
         {
             {true,  "clean"},
             {false, "dirty"},
         };
 
-    private string is_clean_string( bool is_clean, bool in_sync )
+    private static string is_clean_string( bool is_clean, bool in_sync )
         {
         return the_git_status[(is_clean && in_sync)];
         }
 
-    private static readonly Dictionary<bool, string> the_sync_status = new Dictionary<bool, string>
+    private static readonly Dictionary<bool, string> the_sync_status = new()
         {
             {true,  "in sync"},
             {false, "out of sync"},
         };
 
-    private string in_sync_string( bool in_sync)
+    private static string in_sync_string( bool in_sync)
         {
         return the_sync_status[(in_sync)];
         }

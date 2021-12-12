@@ -83,7 +83,7 @@ public abstract class ArgUnit
         return option_str.Substring(0, option_str.Length - Symbol.Length);
         }
 
-    private string remove_prefix( string option_str, Dictionary<string, iMagnitudeEntry> magnitude_map, out string magnitude )
+    private static string remove_prefix( string option_str, Dictionary<string, iMagnitudeEntry> magnitude_map, out string magnitude )
         {
         var magnitude_list = magnitude_map.Keys.OrderBy(x => x.Length).Reverse();
 

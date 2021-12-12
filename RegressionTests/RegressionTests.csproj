@@ -11,6 +11,26 @@
     <IsPackable>false</IsPackable>
 
     <Configurations>Debug;Release;Coverage</Configurations>
+
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+
+    <AnalysisLevel>6.0</AnalysisLevel>
+
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Coverage|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

@@ -40,7 +40,7 @@ public static class RealNumber
         {
         if( string.IsNullOrEmpty(number_str) )
             {
-            throw new ArgumentNullException();
+            throw new ArgumentNullException(Properties.language.NUMBER_PARSE_NULL);
             }
 
         number_str = update_real_number_sign(number_str.Trim());
@@ -56,7 +56,7 @@ public static class RealNumber
         return "+" + number_str;
         }
 
-    private static readonly Dictionary<string, double> the_special_number_map = new Dictionary<string, double>
+    private static readonly Dictionary<string, double> the_special_number_map = new()
         {
             {"+nan", double.NaN},
             {"+inf", double.PositiveInfinity},
@@ -71,7 +71,7 @@ public static class RealNumber
 
     private static readonly string the_separator = Regex.Escape(CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator);
 
-    private static readonly List<string> the_real_format_pattern_list = new List<string>
+    private static readonly List<string> the_real_format_pattern_list = new()
         {
         @"^(\+|-)(0|[1-9][0-9]*)" + @"(" + the_separator + @")?" + @"(e(\+|-)?(0|[1-9][0-9]*))?$",
         @"^(\+|-)" + @"(" + the_separator + @")" + @"([0-9]+)" + @"(e(\+|-)?(0|[1-9][0-9]*))?$",

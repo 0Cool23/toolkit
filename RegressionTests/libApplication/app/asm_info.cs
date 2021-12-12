@@ -126,7 +126,7 @@ public class AsmInfo_test
             {
             }
 
-        private void init_field_name_map_exception()
+        private static void init_field_name_map_exception()
             {
             // init_field_name_map exceptions (field_info_list == null)
             try
@@ -143,7 +143,7 @@ public class AsmInfo_test
                 }
             }
 
-        private void init_field_name_map_exception( FieldInfo[] field_info_list )
+        private static void init_field_name_map_exception( FieldInfo[] field_info_list )
             {
             // init_field_name_map exceptions (field_name_list == null)
             try
@@ -160,12 +160,12 @@ public class AsmInfo_test
                 }
             }
 
-        private void init_field_name_map_overwrite( FieldInfo[] field_info_list, List<string> field_name_list )
+        private static void init_field_name_map_overwrite( FieldInfo[] field_info_list, List<string> field_name_list )
             {
             var _ = init_field_name_map(field_info_list, field_name_list);
             }
 
-        private void get_field_value_exception()
+        private static void get_field_value_exception()
             {
             // get_field_value exceptions (field_info_list == null)
             try
@@ -182,7 +182,7 @@ public class AsmInfo_test
                 }
             }
 
-        private void get_field_value_exception( FieldInfo[] field_info_list )
+        private static void get_field_value_exception( FieldInfo[] field_info_list )
             {
             // get_field_value exceptions (invalid field_name argument)
             try
@@ -199,7 +199,7 @@ public class AsmInfo_test
                 }
             }
 
-        private void get_field_value_not_existing( FieldInfo[] field_info_list, string field_name )
+        private static void get_field_value_not_existing( FieldInfo[] field_info_list, string field_name )
             {
             var empty_string = get_field_value(field_info_list, field_name);
             Assert.AreEqual(string.Empty, empty_string, "get_field_value result must be an empty string for not existing structure element value.");

@@ -74,7 +74,7 @@ internal class ArgLong
         return true;
         }
 
-    private string get_option( ArgVector argv, out string argument )
+    private static string get_option( ArgVector argv, out string argument )
         {
         argument = null;
         int index = argv.current_arg.IndexOf("=");
@@ -125,7 +125,7 @@ internal class ArgLong
         arg_entry.param.parse(argument);
         }
 
-    private string opt_argument( ArgVector argv )
+    private static string opt_argument( ArgVector argv )
         {
         if (!argv.current_arg.StartsWith("-"))
             {
@@ -135,7 +135,7 @@ internal class ArgLong
         return null;
         }
 
-    private string required_argument( ArgVector argv )
+    private static string required_argument( ArgVector argv )
         {
         // as successor exists, we take it as argument
         var argument = argv.current_arg;

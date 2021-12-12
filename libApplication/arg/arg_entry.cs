@@ -183,7 +183,7 @@ public class ArgEntry
         return test_argument_content(text);
         }
 
-    private string check_long_arg( string long_arg )
+    private static string check_long_arg( string long_arg )
         {
         if( !string.IsNullOrEmpty(long_arg) )
             {
@@ -195,7 +195,7 @@ public class ArgEntry
         return long_arg;
         }
 
-    private void is_valid_help_text( string help_text )
+    private static void is_valid_help_text( string help_text )
         {
         if( !help_text.EndsWith(".") )
             {
@@ -207,7 +207,7 @@ public class ArgEntry
             }
         }
 
-    private string check_help_text( string help_text )
+    private static string check_help_text( string help_text )
         {
         if( string.IsNullOrEmpty(help_text) )
             {

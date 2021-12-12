@@ -98,7 +98,7 @@ public class Argument
         {
         }
 
-    private string trim_option_string( string argument_str )
+    private static string trim_option_string( string argument_str )
         {
         if( argument_str != null )
             {
