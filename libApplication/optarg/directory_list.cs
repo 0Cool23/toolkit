@@ -41,7 +41,7 @@ public class DirectoryList
         MustExist = must_exist;
         }
 
-    private readonly List<DirectoryInfo> m_directory_list = new List<DirectoryInfo>();
+    private readonly List<DirectoryInfo> m_directory_list = new();
 
     public bool MustExist
         {

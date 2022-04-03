@@ -48,7 +48,12 @@ public class FilePath
         get;
         } = true;
 
-    public string Filename
+    public FileInfo Info
+        {
+        get => m_file_info;
+        }
+
+    public string FileName
         {
         get
             {

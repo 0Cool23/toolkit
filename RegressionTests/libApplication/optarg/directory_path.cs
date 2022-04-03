@@ -37,7 +37,8 @@ public class DirectoryPath_test
         {
         var directory_path = new DirectoryPath();
         Assert.IsTrue(directory_path.MustExist, "MustExist property must default to true value.");
-        Assert.AreEqual(string.Empty, directory_path.Path, "Path property must default to empty string value.");
+        Assert.IsNull(directory_path.Info, "Info property must default to null value.");
+        Assert.AreEqual(string.Empty, directory_path.PathName, "PathName property must default to empty string value.");
         Assert.IsFalse(directory_path.PathExists, "PathExists property must be false after construction.");
         }
 
@@ -49,7 +50,8 @@ public class DirectoryPath_test
         {
         var directory_path = new DirectoryPath(false);
         Assert.IsFalse(directory_path.MustExist, "MustExist property must be false when set in constructor.");
-        Assert.AreEqual(string.Empty, directory_path.Path, "Path property must default to empty string value.");
+        Assert.IsNull(directory_path.Info, "Info property must default to null value.");
+        Assert.AreEqual(string.Empty, directory_path.PathName, "PathName property must default to empty string value.");
         Assert.IsFalse(directory_path.PathExists, "PathExists property must be false after construction.");
         }
 
@@ -64,7 +66,10 @@ public class DirectoryPath_test
         directory_path.init(arg_entry);
         directory_path.parse(SolutionInfo.ProjectDir.FullName);
         Assert.IsFalse(directory_path.MustExist, "MustExist property must have false value.");
-        Assert.AreEqual(SolutionInfo.ProjectDir.FullName, directory_path.Path, "Path property must match configured value.");
+        Assert.IsNotNull(directory_path.Info, "Info property must not default to null value.");
+        Assert.IsInstanceOfType(directory_path.Info, typeof(DirectoryInfo), "Info property type does not match expected value.");
+        Assert.AreEqual(SolutionInfo.ProjectDir.FullName, directory_path.Info.FullName, "Info property must match configured value.");
+        Assert.AreEqual(SolutionInfo.ProjectDir.FullName, directory_path.PathName, "PathName property must match configured value.");
         Assert.IsTrue(directory_path.PathExists, "PathExists property must be true for an existing path.");
         }
 
@@ -81,7 +86,10 @@ public class DirectoryPath_test
         var not_exiting_path = SolutionInfo.ProjectDir.FullName + @"not_exiting";
         directory_path.parse(not_exiting_path);
         Assert.IsFalse(directory_path.MustExist, "MustExist property must have false value.");
-        Assert.AreEqual(not_exiting_path, directory_path.Path, "Path property must match configured value.");
+        Assert.IsNotNull(directory_path.Info, "Info property must not default to null value.");
+        Assert.IsInstanceOfType(directory_path.Info, typeof(DirectoryInfo), "Info property type does not match expected value.");
+        Assert.AreEqual(not_exiting_path, directory_path.Info.FullName, "Info property must match configured value.");
+        Assert.AreEqual(not_exiting_path, directory_path.PathName, "PathName property must match configured value.");
         Assert.IsFalse(directory_path.PathExists, "PathExists property must be false for not existing path values.");
         }
 

@@ -48,12 +48,14 @@ public class DirectoryPath
         get;
         } = true;
 
-    public string Path
+    public DirectoryInfo Info
         {
-        get
-            {
-            return m_directory_info?.FullName ?? string.Empty;
-            }
+        get => m_directory_info;
+        }
+
+    public string PathName
+        {
+        get => m_directory_info?.FullName ?? string.Empty;
         }
 
     public bool PathExists

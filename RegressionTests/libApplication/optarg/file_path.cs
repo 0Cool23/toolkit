@@ -37,7 +37,8 @@ public class FilePath_test
         {
         var file_path = new FilePath();
         Assert.IsTrue(file_path.MustExist, "MustExist property must default to true value.");
-        Assert.AreEqual(string.Empty, file_path.Filename, "Filename property must default to empty string value.");
+        Assert.IsNull(file_path.Info, "Info property must default to null value.");
+        Assert.AreEqual(string.Empty, file_path.FileName, "Filename property must default to empty string value.");
         Assert.IsFalse(file_path.FileExists, "FileExists property must be false after construction.");
         }
 
@@ -52,7 +53,8 @@ public class FilePath_test
         {
         var file_path = new FilePath(false);
         Assert.IsFalse(file_path.MustExist, "MustExist property must be false when set in constructor.");
-        Assert.AreEqual(string.Empty, file_path.Filename, "Filename property must default to empty string value.");
+        Assert.IsNull(file_path.Info, "Info property must default to null value.");
+        Assert.AreEqual(string.Empty, file_path.FileName, "Filename property must default to empty string value.");
         Assert.IsFalse(file_path.FileExists, "FileExists property must be false after construction.");
         }
 
@@ -67,7 +69,9 @@ public class FilePath_test
         file_path.init(arg_entry);
         file_path.parse(EXISTING_FILE);
         Assert.IsFalse(file_path.MustExist, "MustExist property must have false value.");
-        Assert.AreEqual(EXISTING_FILE, file_path.Filename, "Filename property must match configured value.");
+        Assert.IsNotNull(file_path.Info, "Info property must not default to null value.");
+        Assert.IsInstanceOfType(file_path.Info, typeof(FileInfo), "Info property type does not match expected value.");
+        Assert.AreEqual(EXISTING_FILE, file_path.FileName, "Filename property must match configured value.");
         Assert.IsTrue(file_path.FileExists, "FileExists property must be true for an existing file.");
         }
 
@@ -83,7 +87,9 @@ public class FilePath_test
 
         file_path.parse(NOT_EXISTING_FILE);
         Assert.IsFalse(file_path.MustExist, "MustExist property must have false value.");
-        Assert.AreEqual(NOT_EXISTING_FILE, file_path.Filename, "Filename property must match configured value.");
+        Assert.IsNotNull(file_path.Info, "Info property must not default to null value.");
+        Assert.IsInstanceOfType(file_path.Info, typeof(FileInfo), "Info property type does not match expected value.");
+        Assert.AreEqual(NOT_EXISTING_FILE, file_path.FileName, "Filename property must match configured value.");
         Assert.IsFalse(file_path.FileExists, "FileExists property must be false for not existing file values.");
         }
 
